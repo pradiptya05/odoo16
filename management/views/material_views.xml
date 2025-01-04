@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_material_form" model="ir.ui.view">
+        <field name="name">material.management.form</field>
+        <field name="model">material.management</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="kode"/>
+                <field name="nama"/>
+                <field name="tipe_material"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_material_form" model="ir.ui.view">
+        <field name="name">material.management.tree</field>
+        <field name="model">material.management</field> 
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                <field name="kode"/>
+                <field name="nama"/>
+                <field name="tipe_material"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_material_management" name="Material Management" sequence="10"/>
+    
+    <menuitem id="menu_material" name="Materials" parent="menu_material_management"/>
+
+    <act_window id="action_material" 
+                name="Materials"
+                res_model="material.management"
+                view_mode="tree,form"
+                menu_id="menu_material"/>
+</odoo>
